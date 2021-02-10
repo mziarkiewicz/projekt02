@@ -13,6 +13,7 @@
 
 <div style="width: 90%; margin: 2em auto;">
     <form class="pure-form pure-form-aligned" action="<?php print(_APP_URL);?>/app/calc.php" method="post">
+        <legend>Uproszczony kalkulator kredytowy</legend>
         <fieldset>
             <div class="pure-control-group">
                 <label for="id_val">Kwota kredytu: </label>
@@ -26,7 +27,9 @@
                 <label for="id_pct">Oprocentowanie: </label>
                 <input id="id_pct" type="text" name="pct" value="<?php print(isset($pct) ? $pct : '' ); ?>" /><br />
             </div>
-            <input class="pure-button pure-button-primary" type="submit" value="Oblicz" />
+            <div class="pure-controls">
+                <input class="pure-button pure-button-primary" type="submit" value="Oblicz" />
+            </div>
         </fieldset>
     </form>
 
@@ -34,7 +37,7 @@
     //wyświeltenie listy błędów, jeśli istnieją
     if (isset($messages)) {
 //	if (count ( $messages ) > 0) {
-        echo '<ol style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #ff9c95; width:300px;">';
+        echo '<ol style="background: #ff8888; margin: 1em; margin-top: 2em; margin-right: 0px; margin-bottom: 2em; margin-left: 0px; padding: .3em 1em; border-radius: 5px; color: #fff;">';
         foreach ( $messages as $key => $msg ) {
             echo '<li>'.$msg.'</li>';
         }
@@ -44,7 +47,7 @@
     ?>
 
     <?php if (isset($result)){ ?>
-        <div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #ffff67; width:300px;">
+        <div style="background: #1fadfa; margin: 1em; margin-top: 2em; margin-right: 0px; margin-bottom: 3em; margin-left: 0px; padding: .3em 1em; border-radius: 5px; color: #fff;">
             <?php echo 'Miesięczna rata będzie wynosić ok. : '.number_format($result, 2,'.',''); ?>
         </div>
     <?php } ?>
