@@ -9,13 +9,17 @@
 
 <div style="width:90%; margin: 2em auto;">
 
-<form action="<?php print(_APP_ROOT); ?>/app/security/login.php" method="post" class="pure-form pure-form-stacked">
+<form action="<?php print(_APP_ROOT); ?>/app/security/login.php" method="post" class="pure-form pure-form-aligned">
 	<legend>Logowanie</legend>
 	<fieldset>
-		<label for="id_login">login: </label>
-		<input id="id_login" type="text" name="login" value="<?php out($form['login']); ?>" />
-		<label for="id_pass">pass: </label>
-		<input id="id_pass" type="password" name="pass" />
+        <div class="pure-control-group">
+            <label for="id_login">login: </label>
+            <input id="id_login" type="text" name="login" value="<?php out($form['login']); ?>" />
+        </div>
+        <div class="pure-control-group">
+            <label for="id_pass">pass: </label>
+            <input id="id_pass" type="password" name="pass" />
+        </div>
 	</fieldset>
 	<input type="submit" value="zaloguj" class="pure-button pure-button-primary"/>
 </form>	

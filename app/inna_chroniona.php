@@ -18,7 +18,7 @@ include _ROOT_PATH.'/app/security/check.php';
 </div>
 
 <div style="width:90%; margin: 2em auto;">
-	<p>To jest chroniona strona aplikacji internetowej</p>
+	<Legend>To jest chroniona strona aplikacji internetowej</Legend>
 </div>	
 
 </body>
