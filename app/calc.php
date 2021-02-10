@@ -3,7 +3,7 @@
 require_once dirname(__FILE__).'/../config.php';
 
 //ochrona kontrolera - poniższy skrypt przerwie przetwarzanie w tym punkcie gdy użytkownik jest niezalogowany
-//include _ROOT_PATH.'/app/security/check.php';
+include _ROOT_PATH.'/app/security/check.php';
 
 // pobranie parametrów
 function getParams(&$amo,&$yr,&$pct) {
@@ -69,7 +69,6 @@ function process(&$amo,&$yr,&$pct,&$messages,&$result){
 
     if ($pct == 0 && $role != 'admin'){
         $messages [] = 'Tylko administrator może dostać zerowe oprocentowanie!';
-        exit;
     }
 
     //wykonanie operacji
